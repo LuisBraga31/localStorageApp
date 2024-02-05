@@ -1,0 +1,44 @@
+@use '../variables'
+@use '../mixins'
+
+.table 
+    display: flex
+    flex-direction: column
+    gap: 1.5rem
+    background-color: variables.$backgroundContent
+    margin: 20px 100px
+    padding: 20px 50px
+    border-radius: 15px
+
+    table
+        border-collapse: collapse
+        width: 100%
+
+        th 
+            background-color: variables.$thColor
+        
+        tr
+            &:nth-child(even)
+                background-color: variables.$trColor
+
+        td, th
+            border: 1px solid variables.$black
+            text-align: left
+            padding: 8px
+            color: variables.$white
+            width: 25%
+            text-align: center
+            
+            button
+                background-color: variables.$red-button
+                border: 1px solid variables.$red-button
+                padding: 5px 8px
+
+    .buttonRemove
+        @include mixins.display-flex 
+
+        button
+            background-color: variables.$red-button
+            border: 1px solid variables.$red-button
+            box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0
+            padding: 5px 25px
